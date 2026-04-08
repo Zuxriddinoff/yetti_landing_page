@@ -3,21 +3,39 @@ import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://ye77i-tech.vercel.app";
 const siteName = "YE77I TECH";
-const defaultTitle = "Ye77i Tech IT company";
+const defaultTitle = "YE77I TECH | Ye77i Tech | 7Tech | 7 tech IT company";
 const defaultDescription =
-  "YE77I TECH bizneslar uchun websayt, mobil ilova, CRM, avtomatlashtirish va ichki tizimlarni ishlab chiqadigan dasturiy hamkor.";
-const tabIcon = "/ye77i-tech-tab-icon.png";
-const ogImage = "/ye77i-tech-logo.png";
+  "YE77I TECH, Ye77i Tech, 7Tech va 7 tech nomlari bilan tanilgan IT company. Bizneslar uchun websayt, mobil ilova, CRM, ERP, avtomatlashtirish va ichki tizimlarni ishlab chiqadigan dasturiy hamkor.";
+const tabIcon = "/branding/ye77i-tech-logo-dark.svg";
+const ogImage = "/branding/ye77i-tech-logo-light.png";
 const keywords = [
   "YE77I TECH",
   "Ye77i Tech",
+  "ye77i tech",
   "7Tech",
   "7 tech",
   "YE77I",
+  "ye77i",
+  "7no",
+  "7 no",
+  "7 number tech",
+  "7 raqam tech",
+  "yetti tech",
+  "yettii tech",
+  "ye77i uz",
+  "ye77i.uz",
+  "ye77itech",
+  "ye77i tech uzbekistan",
+  "7 tech uzbekistan",
+  "7tech uzbekistan",
+  "uzbekistan it company",
+  "tashkent it company",
   "websayt yaratish",
   "mobil ilova yaratish",
   "crm tizim",
   "crm ishlab chiqish",
+  "erp tizim",
+  "telegram bot yasash",
   "business automation",
   "landing page",
   "korporativ sayt",
@@ -63,9 +81,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: [{ url: tabIcon, sizes: "512x512", type: "image/png" }],
+    icon: [{ url: tabIcon, type: "image/svg+xml" }],
     shortcut: [tabIcon],
-    apple: [{ url: tabIcon, sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/branding/ye77i-tech-logo-dark.png", sizes: "1536x1024", type: "image/png" }],
   },
   formatDetection: {
     email: true,
@@ -78,9 +96,9 @@ export const metadata: Metadata = {
     title: siteName,
   },
   openGraph: {
-    title: defaultTitle,
+    title: "YE77I TECH | Ye77i Tech | 7Tech",
     description:
-      "Biznesingiz uchun chiroyli, tez va sotuvga ishlaydigan websayt, mobil ilova, CRM va avtomatlashtirish yechimlarini yaratamiz.",
+      "YE77I TECH, Ye77i Tech va 7Tech brendi ostida biznesingiz uchun websayt, mobil ilova, CRM, ERP va avtomatlashtirish yechimlarini yaratamiz.",
     url: siteUrl,
     siteName,
     locale: "uz_UZ",
@@ -96,9 +114,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: defaultTitle,
+    title: "YE77I TECH | Ye77i Tech | 7Tech",
     description:
-      "Biznesingiz uchun websayt, mobil ilova, CRM va avtomatlashtirish yechimlarini bir joyda ishlab chiqamiz.",
+      "Ye77i Tech, 7Tech va YE77I TECH nomlari bilan biznesingiz uchun websayt, mobil ilova, CRM va avtomatlashtirish yechimlarini ishlab chiqamiz.",
     images: [ogImage],
   },
   appLinks: {
@@ -137,13 +155,25 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteName,
-    alternateName: ["Ye77i Tech", "7Tech", "7 tech"],
+    alternateName: [
+      "Ye77i Tech",
+      "ye77i tech",
+      "7Tech",
+      "7 tech",
+      "YE77I",
+      "ye77i",
+      "7no",
+      "7 no",
+      "yetti tech",
+      "ye77itech",
+    ],
     url: siteUrl,
     logo: `${siteUrl}${ogImage}`,
     image: `${siteUrl}${ogImage}`,
     description: defaultDescription,
     email: "ye77itech@gmail.com",
     areaServed: ["Uzbekistan", "Central Asia", "Remote"],
+    keywords: keywords.join(", "),
     sameAs: [siteUrl],
   };
 
@@ -151,10 +181,11 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteName,
-    alternateName: ["Ye77i Tech", "7Tech", "7 tech"],
+    alternateName: ["Ye77I Tech", "ye77i tech", "7Tech", "7 tech", "7no", "7 no"],
     url: siteUrl,
     description: "Websayt, mobil ilova, CRM va biznes avtomatlashtirish xizmatlari.",
     inLanguage: ["uz", "en", "ru"],
+    keywords,
     publisher: {
       "@type": "Organization",
       name: siteName,
@@ -165,6 +196,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: siteName,
+    alternateName: ["Ye77i Tech", "ye77i tech", "7Tech", "7 tech", "7no", "7 no"],
     url: siteUrl,
     image: `${siteUrl}${ogImage}`,
     logo: `${siteUrl}${ogImage}`,
@@ -179,6 +211,29 @@ export default function RootLayout({
       "UI/UX design",
       "API integration",
     ],
+    keywords,
+  };
+
+  const webpageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: defaultTitle,
+    url: siteUrl,
+    description: defaultDescription,
+    about: [
+      { "@type": "Thing", name: "YE77I TECH" },
+      { "@type": "Thing", name: "Ye77i Tech" },
+      { "@type": "Thing", name: "ye77i tech" },
+      { "@type": "Thing", name: "7Tech" },
+      { "@type": "Thing", name: "7 tech" },
+      { "@type": "Thing", name: "7no" },
+      { "@type": "Thing", name: "7 no" },
+    ],
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteName,
+      url: siteUrl,
+    },
   };
 
   return (
@@ -195,6 +250,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageJsonLd) }}
         />
         {children}
       </body>

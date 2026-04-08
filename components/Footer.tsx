@@ -1,9 +1,9 @@
 "use client";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { useI18n } from "@/components/LanguageProvider";
 import { useLeadModal } from "@/components/LeadModalProvider";
 import { Github, Linkedin, Send } from "lucide-react";
-import Image from "next/image";
 
 export function Footer() {
   const { t } = useI18n();
@@ -15,13 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-4">
           <div>
             <a href="#" className="inline-flex items-center">
-              <Image
-                src="/ye77i-tech-logo.png"
-                alt="YE77I TECH logo"
-                width={164}
-                height={70}
-                className="h-auto w-[128px] sm:w-[144px]"
-              />
+              <BrandLogo className="h-auto w-[128px] sm:w-[144px]" />
             </a>
             <p className="mt-5 max-w-xs text-sm leading-6 text-slate-600">{t.footer.tagline}</p>
             <div className="mt-6 flex items-center gap-4">

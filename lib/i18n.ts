@@ -21,9 +21,9 @@ export const translations = {
     },
     hero: {
       badge: "Software design and engineering studio",
-      title: "Digital products that feel premium from the first second.",
+      title: "Digital products that make your brand feel trusted from the very first glance.",
       description:
-        "YE77I TECH designs and builds elegant software for growing companies, combining strong visual execution with stable engineering and a clean delivery process.",
+        "YE77I TECH designs websites, apps, and internal systems that look refined, feel effortless, and help growing companies earn trust faster.",
       primaryCta: "Start a Project",
       secondaryCta: "View Case Studies",
       highlights: [
@@ -56,6 +56,39 @@ export const translations = {
         { value: 10, suffix: "+", label: "Projects Delivered" },
         { value: 10, suffix: "+", label: "Happy Clients" },
         { value: 2, suffix: "+", label: "Years of Excellence" },
+      ],
+    },
+    results: {
+      label: "What You Actually Get",
+      title: "A digital product your clients understand quickly and your team manages confidently.",
+      description:
+        "We turn design, usability, and business logic into one clean system so your product feels easy for users and practical for your team from day one.",
+      summaryEyebrow: "Business Outcome",
+      summaryTitle: "Beautiful appearance, smooth usage, and reliable operation in one solution.",
+      summaryDescription:
+        "This is not just a good-looking interface. It is a product structure built to increase trust, make decisions easier, and support daily operations without confusion.",
+      cardLabel: "Focus",
+      stats: [
+        { label: "Launch timeline", value: "6-8 weeks" },
+        { label: "Weekly communication", value: "Every week" },
+        { label: "Support", value: "Included" },
+      ],
+      items: [
+        {
+          title: "Websites that bring inquiries",
+          description:
+            "Pages that present your services clearly, build trust fast, and guide visitors toward contacting you without extra friction.",
+        },
+        {
+          title: "Mobile apps people use comfortably",
+          description:
+            "Simple flows, clean screens, and intuitive actions that help users understand the product without learning effort.",
+        },
+        {
+          title: "CRM systems that keep operations in order",
+          description:
+            "A structured workspace for sales, orders, clients, and internal coordination so the team stays organized as the business grows.",
+        },
       ],
     },
     services: {
@@ -248,9 +281,9 @@ export const translations = {
     },
     hero: {
       badge: "Студия дизайна и разработки ПО",
-      title: "Цифровые продукты, которые с первых секунд ощущаются премиально.",
+      title: "Цифровые продукты, которые с первого взгляда усиливают доверие к вашему бренду.",
       description:
-        "YE77I TECH проектирует и разрабатывает элегантные цифровые продукты для растущих компаний, сочетая сильную визуальную подачу, стабильную инженерию и чистый процесс доставки.",
+        "YE77I TECH создаёт сайты, приложения и внутренние системы, которые выглядят уверенно, ощущаются удобно и помогают бизнесу быстрее вызывать доверие.",
       primaryCta: "Начать проект",
       secondaryCta: "Смотреть кейсы",
       highlights: [
@@ -283,6 +316,39 @@ export const translations = {
         { value: 10, suffix: "+", label: "Выполненных проектов" },
         { value: 10, suffix: "+", label: "Довольных клиентов" },
         { value: 2, suffix: "+", label: "Лет опыта" },
+      ],
+    },
+    results: {
+      label: "Что вы получаете",
+      title: "Цифровой продукт, который клиенту понятен сразу, а команде удобно вести каждый день.",
+      description:
+        "Мы соединяем дизайн, удобство и бизнес-логику в одну цельную систему, чтобы продукт был приятным для клиента и практичным для вашей команды.",
+      summaryEyebrow: "Результат для бизнеса",
+      summaryTitle: "Красивый внешний вид, удобное использование и стабильная работа в одном решении.",
+      summaryDescription:
+        "Это не просто красивая оболочка. Это продуманная цифровая система, которая усиливает доверие, упрощает выбор клиента и помогает команде работать без хаоса.",
+      cardLabel: "Фокус",
+      stats: [
+        { label: "Срок запуска", value: "6-8 недель" },
+        { label: "Постоянная связь", value: "Каждую неделю" },
+        { label: "Поддержка", value: "Включена" },
+      ],
+      items: [
+        {
+          title: "Сайты, которые приводят обращения",
+          description:
+            "Страницы, которые понятно показывают ваши услуги, быстро вызывают доверие и ведут посетителя к контакту без лишних шагов.",
+        },
+        {
+          title: "Мобильные приложения, которыми удобно пользоваться",
+          description:
+            "Простая логика, чистые экраны и понятные действия, чтобы пользователь чувствовал себя уверенно с первого входа.",
+        },
+        {
+          title: "CRM-системы, которые держат процессы в порядке",
+          description:
+            "Удобная рабочая среда для продаж, заказов, клиентов и внутренней координации, чтобы команда росла без путаницы.",
+        },
       ],
     },
     services: {
@@ -475,9 +541,9 @@ export const translations = {
     },
     hero: {
       badge: "Biznes uchun sayt va ilovalar yaratamiz",
-      title: "Mijoz ishonchini oshiradigan sayt, ilova va CRM yechimlari.",
+      title: "Birinchi qarashdayoq ishonch uyg'otadigan sayt, ilova va CRM yechimlari.",
       description:
-        "YE77I TECH sizning biznesingizni chiroyli ko‘rsatadigan, ishlatishga qulay va savdo jarayonini yengillashtiradigan raqamli yechimlarni yaratadi.",
+        "YE77I TECH biznesingizni chiroyli ko'rsatadigan, foydalanishni yengillashtiradigan va mijozni tezroq ishonchga olib kiradigan raqamli yechimlarni yaratadi.",
       primaryCta: "Loyihani Boshlash",
       secondaryCta: "Keyslami Ko‘rish",
       highlights: [
@@ -510,6 +576,39 @@ export const translations = {
         { value: 10, suffix: "+", label: "Topshirilgan loyihalar" },
         { value: 10, suffix: "+", label: "Mamnun mijozlar" },
         { value: 2, suffix: "+", label: "Yillik tajriba" },
+      ],
+    },
+    results: {
+      label: "Siz Nima Olasiz",
+      title: "Mijoz tez tushunadigan va jamoa bemalol boshqaradigan raqamli yechim.",
+      description:
+        "Biz dizayn, qulaylik va biznes mantiqini bitta aniq tizimga yig'amiz, shunda mahsulot mijozga yoqimli, jamoaga esa amaliy va tushunarli bo'ladi.",
+      summaryEyebrow: "Biznes natijasi",
+      summaryTitle: "Chiroyli ko'rinish, qulay foydalanish va ishonchli ishlash bitta yechimda.",
+      summaryDescription:
+        "Bu shunchaki chiroyli interfeys emas. Bu mijoz ishonchini oshiradigan, tanlovni yengillashtiradigan va jamoa ishini tartibli olib boradigan to'liq raqamli tizim.",
+      cardLabel: "Asosiy yo'nalish",
+      stats: [
+        { label: "Ishga tushirish", value: "6-8 hafta" },
+        { label: "Doimiy aloqa", value: "Har hafta" },
+        { label: "Qo'llab-quvvatlash", value: "Mavjud" },
+      ],
+      items: [
+        {
+          title: "Murojaat olib keladigan saytlar",
+          description:
+            "Xizmatlaringizni tushunarli ko'rsatadigan, ishonch uyg'otadigan va tashrif buyurgan odamni bog'lanishga olib boradigan sahifalar.",
+        },
+        {
+          title: "Foydalanishga yengil mobil ilovalar",
+          description:
+            "Soddalashtirilgan oqim, toza ekranlar va tushunarli harakatlar orqali foydalanuvchi mahsulotni qiynalmasdan ishlata oladi.",
+        },
+        {
+          title: "Tartib bilan ishlaydigan CRM tizimlar",
+          description:
+            "Sotuv, buyurtma, mijoz va ichki jarayonlarni bir joyda boshqarishga yordam beradigan, jamoani tartibli ushlab turadigan tizimlar.",
+        },
       ],
     },
     services: {
@@ -625,23 +724,23 @@ export const translations = {
         {
           quote:
             "Bizga aynan nima kerakligini tez tushunib olishdi va natijada mijozga yoqadigan, ishonchli sayt oldik.",
-          name: "Amir K.",
+          name: "Azizbek R.",
           role: "Biznes egasi",
-          initials: "AK",
+          initials: "AR",
         },
         {
           quote:
             "Jarayon boshidan oxirigacha aniq bo‘ldi. Har hafta nima bo‘layotganini bilib turdik va natijadan mamnun qoldik.",
-          name: "Sarah M.",
+          name: "Mohinur T.",
           role: "Kompaniya asoschisi",
-          initials: "SM",
+          initials: "MT",
         },
         {
           quote:
             "Yangi tizim ichki ishlarimizni tartibga soldi. Jamoa vaqtini tejay boshladik va mijozlar bilan ishlash ham osonlashdi.",
-          name: "James L.",
+          name: "Jahongir U.",
           role: "Direktor",
-          initials: "JL",
+          initials: "JU",
         },
       ],
     },

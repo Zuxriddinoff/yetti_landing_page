@@ -21,7 +21,7 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 const STORAGE_KEY = "ye77i-tech-locale";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>("uz");
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY) as Locale | null;

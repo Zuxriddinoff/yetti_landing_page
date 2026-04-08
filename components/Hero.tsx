@@ -3,9 +3,43 @@
 import { useI18n } from "@/components/LanguageProvider";
 import { useLeadModal } from "@/components/LeadModalProvider";
 
+function getHeroTitleSegments(locale: "en" | "ru" | "uz") {
+  if (locale === "uz") {
+    return {
+      lead: "Birinchi qarashdayoq",
+      accent: "ishonch",
+      tailStart: "uyg'otadigan",
+      highlightedWords: ["sayt", "ilova", "CRM"],
+      joinWord: "va",
+      tailEnd: "yechimlari.",
+    };
+  }
+
+  if (locale === "ru") {
+    return {
+      lead: "С первого взгляда",
+      accent: "доверие",
+      tailStart: "к бренду через",
+      highlightedWords: ["сайт", "приложение", "CRM"],
+      joinWord: "и",
+      tailEnd: "решение.",
+    };
+  }
+
+  return {
+    lead: "Make your brand feel",
+    accent: "trusted",
+    tailStart: "through a",
+    highlightedWords: ["website", "app", "CRM"],
+    joinWord: "and",
+    tailEnd: "experience.",
+  };
+}
+
 export function Hero() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const { openLeadModal } = useLeadModal();
+  const titleSegments = getHeroTitleSegments(locale);
 
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pb-32 lg:pt-36">
@@ -21,26 +55,28 @@ export function Hero() {
       <div className="section-shell relative z-10">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)] lg:gap-10">
           <div className="max-w-3xl">
-            <div className="inline-flex animate-[fade-up_0.8s_ease_forwards] items-center gap-3 rounded-full border border-[rgba(23,123,230,0.12)] bg-white/86 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#177BE6] shadow-[0_12px_28px_rgba(23,123,230,0.08)] backdrop-blur">
+            <div className="font-brand inline-flex animate-[fade-up_0.8s_ease_forwards] items-center gap-3 rounded-full border border-[rgba(23,123,230,0.12)] bg-white/86 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#177BE6] shadow-[0_12px_28px_rgba(23,123,230,0.08)] backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-[#177BE6]" />
               {t.hero.badge}
             </div>
 
             <div className="mt-8 animate-[fade-up_0.8s_ease_0.08s_forwards] opacity-0">
-              <div className="mb-5 flex items-center gap-4">
-                <span className="h-px w-14 bg-[linear-gradient(90deg,#177BE6,transparent)]" />
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                  premium digital delivery
+              <h1 className="font-brand flex max-w-[11.8ch] flex-col gap-2 text-[2.7rem] font-black leading-[0.98] tracking-[-0.06em] text-[var(--text-primary)] sm:gap-3 sm:text-[4rem] lg:gap-3.5 lg:text-[5.1rem]">
+                <span className="block">{titleSegments.lead}</span>
+                <span className="hero-title-accent block">{titleSegments.accent}</span>
+                <span className="block">
+                  {titleSegments.tailStart}{" "}
+                  <span className="hero-title-accent">{titleSegments.highlightedWords[0]}</span>,{" "}
+                  <span className="hero-title-accent">{titleSegments.highlightedWords[1]}</span>{" "}
+                  {titleSegments.joinWord}{" "}
+                  <span className="hero-title-accent">{titleSegments.highlightedWords[2]}</span>{" "}
+                  {titleSegments.tailEnd}
                 </span>
-              </div>
-
-              <h1 className="max-w-[10.8ch] text-[3.35rem] font-bold leading-[0.88] tracking-[-0.05em] text-slate-950 sm:text-[4.8rem] lg:text-[6.2rem]">
-                {t.hero.title}
               </h1>
             </div>
 
             <div className="mt-8 animate-[fade-up_0.8s_ease_0.16s_forwards] opacity-0">
-              <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="hero-lead max-w-2xl text-base leading-8 sm:text-lg">
                 {t.hero.description}
               </p>
             </div>
@@ -53,59 +89,13 @@ export function Hero() {
               >
                 <span className="relative z-10">{t.hero.primaryCta}</span>
               </button>
-              <a
-                href="#portfolio"
-                className="inline-flex items-center justify-center rounded-full border border-[rgba(15,23,42,0.1)] bg-white/92 px-7 py-4 text-sm font-medium text-slate-900 shadow-[0_14px_30px_rgba(15,23,42,0.05)] hover:bg-white"
-              >
-                {t.hero.secondaryCta}
-              </a>
-            </div>
-
-            <div className="mt-12 animate-[fade-up_0.8s_ease_0.32s_forwards] opacity-0">
-              <div className="grid gap-4 sm:grid-cols-[1.1fr_0.9fr]">
-                <div className="rounded-[30px] border border-[rgba(15,23,42,0.08)] bg-[#0F1B31] p-6 text-white shadow-[0_28px_60px_rgba(15,23,42,0.12)]">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-400">
-                    {t.hero.panelEyebrow}
-                  </div>
-                  <div className="mt-4 max-w-[16ch] text-2xl font-semibold leading-tight">
-                    {t.hero.panelTitle}
-                  </div>
-
-                  <div className="mt-6 grid grid-cols-3 gap-3">
-                    {t.hero.stats.map((item) => (
-                      <div key={item.label} className="rounded-[20px] border border-white/10 bg-white/5 p-4">
-                        <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                          {item.label}
-                        </div>
-                        <div className="mt-2 text-lg font-semibold text-white">{item.value}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid gap-4">
-                  {t.hero.highlights.slice(0, 2).map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-[26px] border border-[rgba(15,23,42,0.08)] bg-white/84 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.06)] backdrop-blur"
-                    >
-                      <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-slate-400">
-                        Focus
-                      </div>
-                      <div className="mt-3 text-xl font-semibold leading-tight text-slate-950">
-                        {item}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="animate-[fade-up_0.8s_ease_0.18s_forwards] opacity-0">
-            <div className="relative mx-auto max-w-[620px]">
+            <div className="relative mx-auto max-w-[620px] pt-16">
               <div className="absolute left-[-6%] top-8 hidden h-[78%] w-[78%] rounded-[34px] border border-white/70 bg-white/46 shadow-[0_24px_56px_rgba(23,123,230,0.08)] lg:block" />
-              <div className="absolute right-0 top-[-18px] hidden rounded-full border border-white/70 bg-white/82 px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] text-[#177BE6] shadow-[0_16px_28px_rgba(23,123,230,0.08)] lg:block">
+              <div className="font-brand absolute right-4 top-0 z-20 hidden rounded-full border border-white/70 bg-white/92 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#177BE6] shadow-[0_16px_28px_rgba(23,123,230,0.08)] lg:block">
                 design + system thinking
               </div>
 
@@ -115,7 +105,7 @@ export function Hero() {
                 <div className="grid gap-4">
                   <div className="grid gap-4 sm:grid-cols-[0.9fr_1.1fr]">
                     <div className="rounded-[30px] border border-[rgba(15,23,42,0.08)] bg-white/92 p-5 shadow-[0_16px_36px_rgba(15,23,42,0.05)]">
-                      <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-slate-400">
+                      <div className="font-brand text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
                         {t.hero.confidenceLabel}
                       </div>
                       <div className="mt-3 text-4xl font-bold text-slate-950">98%</div>
@@ -132,13 +122,13 @@ export function Hero() {
                           <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                           <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
                         </div>
-                        <div className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.18em] text-slate-300">
+                        <div className="font-brand rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-300">
                           {t.hero.panelStatus}
                         </div>
                       </div>
 
                       <div className="p-5">
-                        <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-slate-400">
+                        <div className="font-brand text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
                           {t.hero.performanceLabel}
                         </div>
                         <div className="mt-3 max-w-[15ch] text-2xl font-semibold leading-tight text-white">
@@ -167,12 +157,12 @@ export function Hero() {
                     <div className="rounded-[30px] border border-[rgba(15,23,42,0.08)] bg-white/92 p-5 shadow-[0_16px_36px_rgba(15,23,42,0.05)]">
                       <div className="flex items-center justify-between gap-4">
                         <div>
-                          <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-slate-400">
+                          <div className="font-brand text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
                             {t.hero.scoreLabel}
                           </div>
                           <div className="mt-3 text-5xl font-bold text-slate-950">96</div>
                         </div>
-                        <div className="rounded-full bg-[#E8F1FF] px-3 py-1 text-[11px] font-mono uppercase tracking-[0.18em] text-[#177BE6]">
+                        <div className="font-brand rounded-full bg-[#E8F1FF] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[#177BE6]">
                           {t.hero.uptimeLabel}
                         </div>
                       </div>
@@ -186,7 +176,7 @@ export function Hero() {
                     </div>
 
                     <div className="rounded-[30px] border border-[rgba(15,23,42,0.08)] bg-[linear-gradient(135deg,#1A5FD4,#8CB6EA)] p-5 text-white shadow-[0_22px_46px_rgba(23,123,230,0.14)]">
-                      <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-blue-100">
+                      <div className="font-brand text-[11px] font-bold uppercase tracking-[0.18em] text-blue-100">
                         {t.hero.panelEyebrow}
                       </div>
                       <div className="mt-3 text-2xl font-semibold leading-tight">

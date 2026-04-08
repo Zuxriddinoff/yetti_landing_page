@@ -10,9 +10,15 @@
   --accent-cyan: #177be6;
   --accent-violet: #5d7aa6;
   --accent-glow: rgba(23, 123, 230, 0.14);
+  --accent-soft: rgba(23, 123, 230, 0.08);
   --text-primary: #0d1726;
   --text-muted: #66758c;
   --text-secondary: #38506d;
+  --font-brand:
+    Arial,
+    "Helvetica Neue",
+    Helvetica,
+    sans-serif;
 }
 
 html {
@@ -206,6 +212,24 @@ button {
   background: linear-gradient(135deg, #177be6, #4c88d3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+.hero-title-accent {
+  color: var(--accent-cyan);
+  text-shadow: 0 10px 28px var(--accent-glow);
+}
+
+.hero-lead {
+  color: var(--text-secondary);
+}
+
+.hero-kicker {
+  color: var(--accent-cyan);
+  background: linear-gradient(135deg, var(--accent-soft), transparent);
 }
 
 .fade-edge-mask::before,

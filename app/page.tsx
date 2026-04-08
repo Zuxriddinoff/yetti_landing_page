@@ -6,8 +6,8 @@ import { Hero } from "@/components/Hero";
 import { LeadModalProvider } from "@/components/LeadModalProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Navbar } from "@/components/Navbar";
-import { Portfolio } from "@/components/Portfolio";
 import { Process } from "@/components/Process";
+import { ResultsShowcase } from "@/components/ResultsShowcase";
 import { Services } from "@/components/Services";
 import { Stats } from "@/components/Stats";
 import { TechStack } from "@/components/TechStack";
@@ -31,10 +31,10 @@ export default function Home() {
         <Navbar />
         <main className="overflow-hidden">
           <Hero />
+          <ResultsShowcase />
           <Stats />
           <Services />
           <Process />
-          <Portfolio />
           <TechStack />
           <Testimonials />
           <CTABanner />

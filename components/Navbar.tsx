@@ -1,9 +1,9 @@
 "use client";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { useI18n } from "@/components/LanguageProvider";
 import { useLeadModal } from "@/components/LeadModalProvider";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
@@ -11,7 +11,6 @@ export function Navbar() {
   const { openLeadModal } = useLeadModal();
   const navItems = [
     { label: t.navbar.services, href: "#services" },
-    { label: t.navbar.portfolio, href: "#portfolio" },
     { label: t.navbar.process, href: "#process" },
     { label: t.navbar.contact, href: "#contact", isContact: true },
   ];
@@ -45,14 +44,7 @@ export function Navbar() {
       <div className="section-shell">
         <div className="flex h-20 items-center justify-between gap-4">
           <a href="#" aria-label={t.navbar.homeAria} className="flex items-center">
-            <Image
-              src="/ye77i-tech-logo.png"
-              alt="YE77I TECH logo"
-              width={198}
-              height={84}
-              priority
-              className="h-auto w-[146px] sm:w-[160px]"
-            />
+            <BrandLogo className="h-auto w-[146px] sm:w-[160px]" />
           </a>
 
           <div className="hidden items-center gap-6 md:flex">
